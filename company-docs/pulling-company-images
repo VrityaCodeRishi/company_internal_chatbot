@@ -1,0 +1,20 @@
+AgentForce Infotech Container Registry Access
+
+All company Docker images and Helm charts are stored in the AgentForce Infotech Container Registry (harbor.agentforce.internal).
+
+To get access:
+
+1. Go to the #agentforce-container-registry Slack channel
+2. Tag @Priya Sharma (DevOps Lead) or @Amit Patel (Infrastructure Admin) and request access
+3. Specify which projects you need access to (e.g., "Project Phoenix", "Project Atlas")
+4. They will create your Harbor registry credentials and share via encrypted email
+5. Login credentials format: username@agentforce.com / temporary password (change on first login)
+
+Registry URLs:
+- Production: https://harbor.agentforce.internal
+- Staging: https://harbor-staging.agentforce.internal
+
+After getting credentials, configure Docker:
+docker login harbor.agentforce.internal
+
+For urgent access, contact Priya Sharma directly at priya.sharma@agentforce.com or extension 2056.

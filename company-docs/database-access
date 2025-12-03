@@ -1,0 +1,61 @@
+AgentForce Infotech Database Access and Management
+
+## Getting Database Access
+
+1. Request access through AgentForce IT Service Portal: https://itportal.agentforce.internal
+2. Fill out the "Database Access Request" form
+3. Specify which databases you need:
+   - Development (phoenix-dev)
+   - Staging (phoenix-staging)
+   - Production (phoenix-prod) - requires manager approval
+4. Wait for approval (usually within 24 hours, urgent requests contact DBA directly)
+5. You'll receive credentials via encrypted email from database@agentforce.com
+
+## Connection Details
+
+**Development Database (PostgreSQL 15):**
+- Host: db-dev.agentforce.internal
+- Port: 5432
+- Database: phoenix_dev
+- Username: {your-email}@agentforce.com
+- Use your personal credentials (provided via email)
+
+**Staging Database:**
+- Host: db-staging.agentforce.internal
+- Port: 5432
+- Database: phoenix_staging
+- Read-only access for most developers
+- Write access requires special approval from DBA (contact Ravi Verma)
+
+**Production Database:**
+- Host: db-prod.agentforce.internal
+- Port: 5432
+- Database: phoenix_prod
+- Read-only access only (via read replica)
+- Write access requires DBA approval (Ravi Verma) and Jira change request
+- Production writes only through application, never direct SQL
+
+## Tools
+
+- **DBeaver**: Recommended for database management (download from IT portal)
+- **pgAdmin**: Alternative option (pre-installed on company laptops)
+- Connection strings stored in AgentForce 1Password vault (team: "Database Credentials")
+- Never commit database credentials to GitLab
+
+## Best Practices at AgentForce
+
+- Always use parameterized queries (prevent SQL injection)
+- Test queries on dev database before running on staging/prod
+- Backup data before major schema changes
+- Document schema changes in Django migration files (for backend) or migration scripts
+- Use database transactions for multi-step operations
+- Never run DROP or TRUNCATE on staging/prod without DBA approval
+- Use connection pooling (already configured in application)
+
+## Database Team Contacts
+
+- DBA Lead: Ravi Verma (ravi.verma@agentforce.com, ext 3012)
+- Database Support: database@agentforce.com
+- Slack: #agentforce-database-support channel
+
+For urgent access, contact Ravi Verma directly or ping in #agentforce-database-support.

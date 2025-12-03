@@ -1,0 +1,77 @@
+# AgentForce Infotech Slack Communication Guidelines
+
+## Channel Usage
+
+### Company-Wide Channels
+- #agentforce-general - Company-wide announcements (read-only for most)
+- #agentforce-engineering - Technical discussions, architecture
+- #agentforce-random - Non-work conversations, team bonding
+- #agentforce-help - Ask questions, get help from anyone
+- #agentforce-announcements - Important company updates (read-only)
+
+### Team Channels
+- #agentforce-backend - Backend developers (Python, Django, APIs)
+- #agentforce-frontend - Frontend developers (React, TypeScript)
+- #agentforce-devops - Infrastructure, deployment, CI/CD
+- #agentforce-qa - Quality assurance and testing
+- #agentforce-product - Product discussions and requirements
+
+### Project-Specific Channels
+- #agentforce-phoenix - Phoenix project discussions
+- #agentforce-atlas - Atlas project discussions
+- #agentforce-hercules - Hercules project discussions
+
+### Support Channels
+- #agentforce-dev-support - Development environment issues
+- #agentforce-it-helpdesk - IT support requests
+- #agentforce-deployments - Deployment notifications and discussions
+- #agentforce-incidents - Production incidents and status updates
+
+## Best Practices
+
+1. Use threads for replies to keep channels organized (especially in busy channels)
+2. Use @channel sparingly (only for urgent, company-wide matters)
+3. Use @here for messages relevant to currently online team members
+4. Don't DM for questions that could help others (use public channels for knowledge sharing)
+5. Set your status when away, in meetings, or on vacation
+6. Use status emoji: 🍕 (lunch), 🏥 (sick), 🏖️ (vacation), 🔕 (focus time)
+
+## Response Times (IST - Indian Standard Time)
+
+- Urgent (@here/@channel): Within 1 hour during business hours (9 AM - 6 PM IST)
+- Normal messages: Within 4 business hours
+- Non-urgent: Within 24 hours
+- Weekend/after hours: Next business day (unless marked urgent)
+
+## Etiquette
+
+- Be respectful, professional, and inclusive
+- Use emojis appropriately (👍 for acknowledgment, ✅ for done, ❌ for issues)
+- Don't send messages outside business hours (9 AM - 6 PM IST) unless urgent
+- Use code blocks (```) for code snippets
+- Tag relevant people when asking questions (@username)
+- Use "Do Not Disturb" mode during focus time or meetings
+
+## Status Updates
+
+Update your Slack status for:
+- Out of office (OOO)
+- In meetings (with meeting name if helpful)
+- Focus time / Do Not Disturb
+- On vacation (with dates)
+- Working from home (WFH)
+
+## Channel Naming Convention
+
+All channels follow: `agentforce-{team/project/topic}` format
+- Team channels: agentforce-{team-name}
+- Project channels: agentforce-{project-name}
+- Topic channels: agentforce-{topic}
+
+## Important Contacts
+
+- IT Helpdesk: helpdesk@agentforce.com or #agentforce-it-helpdesk
+- For urgent matters outside Slack: Call manager or use phone
+- Slack Admin: Contact IT helpdesk for channel creation or access issues
+
+For Slack questions or issues, contact IT helpdesk or post in #agentforce-help.

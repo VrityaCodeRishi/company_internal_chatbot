@@ -1,0 +1,50 @@
+AgentForce Infotech Code Review Guidelines
+
+All code changes must go through peer review before merging to main branch. Follow these guidelines:
+
+1. Merge Request (MR) Requirements:
+   - Descriptive title: "PROJ-123: Add user authentication feature"
+   - Detailed description explaining what and why
+   - Link to related Jira ticket (format: PROJ-123)
+   - Screenshots/GIFs for UI changes
+   - Update relevant documentation (README, API docs)
+   - Self-review checklist completed
+
+2. Code Review Checklist:
+   - Code follows AgentForce style guide:
+     * Frontend: ESLint config (extends Airbnb style guide)
+     * Backend: Black formatter, Pylint (score > 8.0)
+   - No hardcoded credentials, API keys, or secrets
+   - Environment variables used for config
+   - Proper error handling and logging (use our logger, not print statements)
+   - Tests included for new features (unit + integration)
+   - No console.log, print(), or debug statements
+   - Database migrations included if schema changes
+   - API versioning followed if backend changes
+
+3. Review Process:
+   - Request review from at least one team member
+   - For critical changes, request review from Tech Lead (Vikram Singh)
+   - Address ALL review comments before merging
+   - Resolve merge conflicts before requesting re-review
+   - Get approval from code owner for shared modules
+
+4. Review Etiquette:
+   - Be constructive, respectful, and professional
+   - Explain WHY changes are needed, not just what
+   - Suggest alternatives when possible
+   - Approve promptly if code looks good (within 24 hours)
+   - Use GitLab MR comments for discussions
+
+5. Merge Rules:
+   - Squash commits before merging (use "Squash and merge" option)
+   - Delete feature branch after merge (GitLab auto-deletes)
+   - Update Jira ticket status to "Done"
+   - Ensure CI/CD pipeline passes before merging
+
+6. Special Cases:
+   - Security-related changes: Require review from Security team (contact security@agentforce.com)
+   - Database migrations: Require review from DBA (contact database@agentforce.com)
+   - Infrastructure changes: Require review from DevOps (Anjali Mehta)
+
+For questions, see #agentforce-code-review Slack channel or contact Vikram Singh (Tech Lead).

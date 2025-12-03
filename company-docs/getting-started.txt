@@ -1,0 +1,13 @@
+AgentForce Infotech - Getting Started Guide
+
+Welcome to AgentForce Infotech! To get your setup up and running:
+
+1. Contact IT department (reach out to Rajesh Kumar - rajesh.kumar@agentforce.com) and fill the employee onboarding form with your employment details to get assigned a laptop. The laptop will come pre-configured with all necessary apps including FortiClient VPN, Microsoft Office Suite, and development tools.
+
+2. Join the #agentforce-onboarding Slack channel for new employee resources and announcements.
+
+3. Ask your reporting manager to get you assigned to your project. Your manager will add you to the relevant project channels and Jira boards.
+
+4. Complete the mandatory security training within your first week (link shared via email from security@agentforce.com).
+
+For any issues, contact the IT helpdesk at helpdesk@agentforce.com or call extension 1001.

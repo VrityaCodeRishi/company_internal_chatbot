@@ -1,0 +1,14 @@
+import os
+
+EMBEDDING_MODEL = "nomic-embed-text"
+LLM_MODEL = "qwen3-vl:8b"
+LLM_TEMPERATURE = 0.3
+DOCUMENTS_FOLDER = "company-docs"
+CHROMA_DB_PATH = "./chroma_db"
+CHUNK_SIZE = 600
+CHUNK_OVERLAP = 120
+DEFAULT_K = 3  
+API_HOST = "0.0.0.0"
+API_PORT = 8000
+GRADIO_PORT = 7860
+TIMEOUT=600

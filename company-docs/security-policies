@@ -1,0 +1,78 @@
+AgentForce Infotech Security Policies and Best Practices
+
+## Password Requirements
+
+- Minimum 12 characters (enforced by Active Directory)
+- Must include: uppercase, lowercase, numbers, and special characters (!@#$%^&*)
+- Cannot reuse last 8 passwords
+- Must change every 90 days (system enforces)
+- Use AgentForce 1Password Business (company-managed vault)
+- Never share passwords via email or Slack
+
+## Two-Factor Authentication (2FA)
+
+2FA is mandatory for:
+- FortiClient VPN access (required for remote work)
+- Production systems (AWS, Kubernetes, GitLab)
+- Admin accounts (any role with elevated permissions)
+- Financial systems (SAP, payroll systems)
+- Database access (production)
+
+Set up 2FA:
+1. Go to: https://auth.agentforce.com/2fa
+2. Use Microsoft Authenticator app (preferred) or Google Authenticator
+3. Contact IT helpdesk if you need backup codes
+
+## Data Handling
+
+- Never store passwords, API keys, or secrets in code
+- Use environment variables or HashiCorp Vault (for production secrets)
+- Encrypt sensitive data at rest (AES-256)
+- Use HTTPS/TLS 1.3 for all external communications
+- Follow GDPR and Indian data protection guidelines for user data
+- Customer PII must be encrypted in database
+
+## Access Control
+
+- Request minimum required access (principle of least privilege)
+- Access reviews conducted quarterly by Security team
+- Report suspicious activity immediately to security@agentforce.com
+- Don't share credentials, tokens, or access keys
+- Use service accounts for automated processes (not personal accounts)
+- All access requests must be approved by manager
+
+## Incident Response
+
+If you suspect a security breach:
+1. Immediately change your password and enable 2FA if not already
+2. Report to security@agentforce.com (24/7 monitored)
+3. Contact security team in #agentforce-security-alerts Slack channel
+4. Do NOT attempt to investigate yourself
+5. Preserve evidence (screenshots, logs) if safe to do so
+
+Security team contacts:
+- Security Lead: Neha Kapoor (neha.kapoor@agentforce.com, ext 4001)
+- Emergency: Call security hotline +91-80-XXXX-XXXX (internal directory)
+
+## Code Security
+
+- Run security scans before deployment (SonarQube, OWASP dependency check)
+- Keep dependencies updated (check monthly via Dependabot alerts)
+- Review third-party library security (check CVE database)
+- Use parameterized queries for database (prevent SQL injection)
+- Validate and sanitize all user inputs
+- Never commit secrets to GitLab (use .gitignore, scan with git-secrets)
+- Use secure coding practices (OWASP Top 10 awareness)
+
+## Security Training
+
+- Complete annual security awareness course (mandatory)
+- Training portal: https://training.agentforce.com/security
+- New employees must complete within first month
+- Quarterly phishing simulation tests
+
+## Compliance
+
+AgentForce Infotech is ISO 27001 certified. All security policies must be followed to maintain certification.
+
+For security questions, contact security@agentforce.com or #agentforce-security Slack channel.

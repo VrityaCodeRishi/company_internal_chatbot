@@ -1,0 +1,113 @@
+AgentForce Infotech AWS Resources and Access
+
+## Getting AWS Access
+
+1. Request through AgentForce IT Service Portal: https://itportal.agentforce.internal
+2. Select "AWS Access Request" form
+3. Specify required AWS services (EC2, S3, RDS, Lambda, etc.)
+4. Get manager approval (required)
+5. Complete AWS security training (mandatory, 30-minute course)
+6. Receive IAM credentials within 48 hours via encrypted email from aws-admin@agentforce.com
+
+AWS Security Training: https://training.agentforce.com/aws-security
+
+## Account Structure
+
+AgentForce uses AWS Organizations with three accounts:
+
+- **Development Account (agentforce-dev)**: 
+  - For local testing and dev environments
+  - Account ID: 123456789012
+  - Less restrictive policies
+  
+- **Staging Account (agentforce-staging)**: 
+  - Pre-production testing
+  - Account ID: 234567890123
+  - Production-like environment
+  
+- **Production Account (agentforce-prod)**: 
+  - Live services (highly restricted access)
+  - Account ID: 345678901234
+  - Requires additional approval and 2FA
+
+## Common Services
+
+**EC2 Instances**
+- Development: Use t3.medium or t3.large instances
+- Staging: t3.large or m5.large
+- Production: Auto-scaling groups with m5.xlarge instances
+- Tag all resources: `Project: Phoenix`, `Environment: dev/staging/prod`, `Owner: {your-email}`
+
+**S3 Buckets**
+- Development: `s3://agentforce-dev-{project}-{purpose}/`
+- Staging: `s3://agentforce-staging-{project}-{purpose}/`
+- Production: `s3://agentforce-prod-{project}-{purpose}/`
+- All buckets have versioning and encryption enabled
+
+**RDS Databases (PostgreSQL)**
+- Managed by DevOps team (Anjali Mehta)
+- Request access through IT portal
+- Use read replicas for reporting queries
+- Automated backups enabled (7-day retention)
+
+**Lambda Functions**
+- Deploy via GitLab CI/CD pipeline
+- Monitor in CloudWatch (dashboards in Grafana)
+- Set appropriate timeouts (max 15 minutes)
+- Use environment variables for configuration
+
+**EKS (Kubernetes)**
+- Production Kubernetes cluster managed by DevOps
+- Access via kubectl (configure with AWS CLI)
+- Contact Anjali Mehta for cluster access
+
+## Cost Management
+
+- Review AWS costs monthly (FinOps dashboard: https://finops.agentforce.internal)
+- Use Reserved Instances for production (managed by DevOps)
+- Tag all resources for cost allocation (required)
+- Shut down unused dev resources (automated cleanup runs weekly)
+- Contact FinOps team (finops@agentforce.com) for cost optimization
+
+Cost alerts: Set up in AWS Cost Explorer (contact Anjali Mehta)
+
+## Security
+
+- Use IAM roles (not access keys) for applications
+- Enable MFA for AWS Console access (mandatory)
+- Follow principle of least privilege
+- Review IAM policies quarterly (Security team audits)
+- Never commit AWS credentials to GitLab
+- Use AWS Secrets Manager for sensitive data
+- All S3 buckets have encryption (SSE-S3 or SSE-KMS)
+
+## Monitoring
+
+- **CloudWatch**: Metrics and logs
+  - Dashboard: https://console.aws.amazon.com/cloudwatch
+  - Alarms configured for critical metrics
+  
+- **Grafana**: Aggregated monitoring
+  - URL: https://grafana.agentforce.internal
+  - AWS data sources configured
+  
+- **AWS Cost Explorer**: Cost analysis
+  - URL: https://console.aws.amazon.com/cost-management
+  - Monthly reports sent to managers
+
+## AWS Console Access
+
+- Development: https://agentforce-dev.signin.aws.amazon.com/console
+- Staging: https://agentforce-staging.signin.aws.amazon.com/console
+- Production: https://agentforce-prod.signin.aws.amazon.com/console
+
+**Note**: Production console access requires additional approval and security clearance.
+
+## Contacts
+
+- AWS Admin: Anjali Mehta (anjali.mehta@agentforce.com, ext 2056)
+- DevOps Team: devops@agentforce.com
+- FinOps: finops@agentforce.com
+- Slack: #agentforce-aws-support
+
+For urgent AWS access, contact Anjali Mehta directly.

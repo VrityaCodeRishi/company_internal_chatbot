@@ -1,0 +1,69 @@
+AgentForce Infotech CI/CD Pipeline Process
+
+Our CI/CD pipeline runs on GitLab CI/CD and follows these specific stages:
+
+## Pipeline Stages (GitLab CI/CD)
+
+1. **Build Stage**
+   - Install Node.js 20.x and Python 3.12 dependencies
+   - Run ESLint (frontend) and Black/Pylint (backend)
+   - Compile TypeScript to JavaScript
+   - Build Docker images and push to harbor.agentforce.internal
+   - Image naming: harbor.agentforce.internal/phoenix/{service}:{branch}-{commit}
+
+2. **Test Stage**
+   - Run Jest unit tests (frontend) - minimum 85% coverage required
+   - Run pytest unit tests (backend) - minimum 80% coverage
+   - Run integration tests against test database
+   - SonarQube code quality scan (must pass quality gate)
+   - OWASP dependency check for security vulnerabilities
+
+3. **Deploy to Staging (agentforce-staging.com)**
+   - Automatic deployment if all tests pass
+   - Deploy to Kubernetes cluster (k8s-staging.agentforce.internal)
+   - Run smoke tests using Postman collection
+   - Notify team in #agentforce-deployments Slack channel
+   - Staging URL: https://staging.agentforce.com
+
+4. **Manual Approval (Production)**
+   - Required for production deployment
+   - Approval required from: Project Tech Lead (currently Vikram Singh) OR Product Owner
+   - Review staging test results and SonarQube reports
+   - Approval done via GitLab merge request approval
+
+5. **Deploy to Production (agentforce.com)**
+   - Blue-green deployment on Kubernetes production cluster
+   - Health checks via Prometheus monitoring
+   - Automatic rollback if health checks fail within 5 minutes
+   - Production URL: https://app.agentforce.com
+
+## Configuration
+
+Pipeline config: `.gitlab-ci.yml` in each repository
+Environment variables: Managed in GitLab CI/CD variables (contact Anjali Mehta)
+Secrets: Stored in GitLab CI/CD secret variables (encrypted)
+Kubernetes configs: In `k8s/` directory of each repo
+
+## Troubleshooting
+
+Failed builds:
+- Check GitLab CI/CD pipeline logs: https://gitlab.agentforce.internal/{project}/-/pipelines
+- Fix linting errors locally: `npm run lint` or `black . && pylint .`
+- Run tests locally before pushing: `npm test` or `pytest`
+- Contact DevOps team (#agentforce-devops) if infrastructure issues
+
+Common issues:
+- Docker build fails: Check Dockerfile syntax
+- Tests timeout: Increase timeout in .gitlab-ci.yml
+- Deployment fails: Check Kubernetes cluster status with Anjali Mehta
+
+## Best Practices at AgentForce
+
+- Keep pipeline execution under 15 minutes
+- Use GitLab CI/CD cache for node_modules and pip packages
+- Run tests in parallel using GitLab parallel jobs
+- Use feature flags (LaunchDarkly) for gradual rollouts
+- Monitor deployments in Grafana: https://grafana.agentforce.internal
+
+Pipeline dashboard: https://gitlab.agentforce.internal/{project}/-/pipelines
+For questions, contact Anjali Mehta (DevOps Lead) or Vikram Singh (Tech Lead).

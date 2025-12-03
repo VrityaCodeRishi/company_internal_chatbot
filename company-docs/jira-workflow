@@ -1,0 +1,87 @@
+AgentForce Infotech Jira Workflow and Ticket Management
+
+## Ticket Types
+
+**Epic**: Large feature or initiative (e.g., "User Authentication System")
+**Story**: User-facing feature (e.g., "As a user, I want to login with OAuth")
+**Task**: Technical work item (e.g., "Setup Redis caching layer")
+**Bug**: Defect or issue (e.g., "Login button not working on mobile")
+**Subtask**: Part of a larger ticket
+**Incident**: Production issues (P0/P1 severity)
+
+## Workflow States
+
+1. **Backlog**: Not yet prioritized (Product Owner manages)
+2. **To Do**: Ready to work on (assigned to sprint)
+3. **In Progress**: Currently being worked on (update daily)
+4. **Code Review**: Merge Request created, awaiting review
+5. **QA**: Ready for testing (assign to QA team)
+6. **Testing**: QA is testing (QA team updates)
+7. **Done**: Completed and verified (moved by QA or Product Owner)
+
+## Creating Tickets
+
+Required fields:
+- Clear, descriptive title (format: "PROJ-123: Brief description")
+- Detailed description (what, why, how)
+- Acceptance criteria (bullet points)
+- Story points (for stories/epics, use Fibonacci)
+- Assignee and reporter
+- Labels: `backend`, `frontend`, `api`, `ui`, `bug`, etc.
+- Components: `Phoenix`, `Atlas`, `Hercules` (project names)
+- Fix Version: Target release version
+
+## Best Practices
+
+- Update ticket status regularly (daily updates expected)
+- Add comments for progress updates (what you did, what you're doing)
+- Link related tickets (use "relates to" or "blocks")
+- Attach screenshots/GIFs for UI changes
+- Reference GitLab commit hashes in comments
+- Move to "Done" only after QA verification and Product Owner approval
+- Use time tracking (log hours worked daily)
+
+## Sprint Planning
+
+- Sprint duration: 2 weeks
+- Planning meeting: Monday 10:00 AM IST (every 2 weeks)
+- Retrospective: Friday 3:00 PM IST (end of sprint)
+- Story points: Use Fibonacci sequence (1, 2, 3, 5, 8, 13)
+- Sprint capacity: Typically 20-30 story points per developer per sprint
+
+## Estimation Guidelines
+
+- 1 point: 2-4 hours (simple bug fix, small change)
+- 2 points: Half day (4-8 hours)
+- 3 points: Full day (1 day)
+- 5 points: 2 days (moderate complexity)
+- 8 points: 3-4 days (complex feature, break down if possible)
+- 13+ points: Break down into smaller tickets (epic)
+
+## Reporting and Tracking
+
+- Update time logs daily (helps with velocity tracking)
+- Use Jira dashboards for progress tracking:
+  - Sprint Burndown Chart
+  - Velocity Chart
+  - Cumulative Flow Diagram
+- Burndown charts available in sprint view
+- Velocity tracked automatically (average story points per sprint)
+
+## Jira Projects
+
+- **PHOENIX**: Phoenix project (main product)
+- **ATLAS**: Atlas project (new initiative)
+- **HERCULES**: Hercules project (internal tools)
+- **INCIDENT**: Production incidents (P0/P1)
+- **ADMIN**: Admin tasks and infrastructure
+
+## Jira Access
+
+Jira URL: https://agentforce.atlassian.net
+Login: Use your agentforce.com email (SSO enabled)
+
+For questions or access issues:
+- Jira Admin: Contact IT helpdesk (helpdesk@agentforce.com)
+- Workflow questions: #agentforce-jira-help Slack channel
+- Product Owner: Sanjay Iyer (sanjay.iyer@agentforce.com)

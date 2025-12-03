@@ -1,0 +1,10 @@
+langchain
+langchain-community
+langchain-core
+langchain-ollama
+fastapi
+uvicorn[standard]
+gradio
+chromadb
+pydantic
+requests

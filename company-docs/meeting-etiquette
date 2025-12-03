@@ -1,0 +1,96 @@
+AgentForce Infotech Meeting Guidelines and Best Practices
+
+## Meeting Types
+
+**Daily Standup**
+- Time: 15 minutes max (strict timebox)
+- Format: What did you do yesterday, what will you do today, any blockers
+- Location: Team room (Conference Room A) or Google Meet for remote
+- Time: 9:30 AM IST daily (all teams)
+- Facilitator: Rotates daily among team members
+
+**Sprint Planning**
+- Duration: 2 hours
+- Frequency: Every 2 weeks (Monday 10:00 AM IST)
+- Purpose: Plan sprint backlog, estimate stories, assign work
+- Required: All team members (Product Owner, Developers, QA)
+- Facilitator: Tech Lead (Vikram Singh)
+
+**Sprint Retrospective**
+- Duration: 1 hour
+- Frequency: End of each sprint (Friday 3:00 PM IST)
+- Format: What went well, what to improve, action items (Mad/Sad/Glad format)
+- Required: All team members
+- Facilitator: Rotates or Scrum Master
+
+**One-on-Ones**
+- Frequency: Weekly with manager (schedule individually)
+- Duration: 30 minutes
+- Purpose: Career development, feedback, concerns
+- Format: Employee-driven agenda
+
+**Architecture Review**
+- Frequency: Bi-weekly (Thursday 2:00 PM IST)
+- Duration: 1-2 hours
+- Purpose: Review technical designs, architecture decisions
+- Required: Tech Lead, Senior Engineers, relevant team members
+
+## Best Practices
+
+1. **Be on time**: Join 2 minutes early (IST timezone)
+2. **Have an agenda**: Share beforehand in calendar invite or Slack
+3. **Stay focused**: No multitasking (close other applications)
+4. **Take notes**: Document action items (use shared doc or Confluence)
+5. **Follow up**: Send summary with action items after meeting (within 1 hour)
+
+## Video Call Etiquette (Google Meet)
+
+- Use camera when possible (especially for client-facing meetings)
+- Mute when not speaking (reduce background noise)
+- Use good lighting and professional background (or blur)
+- Test audio/video before meeting starts
+- Use chat for questions during presentations (don't interrupt)
+- Share screen only when needed (close sensitive tabs/windows)
+
+## Meeting Room Booking
+
+- Book rooms through Outlook calendar (Conference Room A, B, C, D)
+- Include Google Meet link for remote participants (always)
+- Cancel if meeting is no longer needed (free up room)
+- Don't book rooms you won't use (check availability first)
+- Room capacity: A (20), B (10), C (6), D (4 people)
+
+## No-Meeting Days / Focus Time
+
+- **Wednesday**: Focus time (no meetings 10:00 AM - 2:00 PM IST)
+- **Friday afternoon**: Minimal meetings after 2:00 PM IST
+- Block your calendar for focus time if needed
+- Use "Do Not Disturb" status in Slack during focus time
+
+## Declining Meetings
+
+It's okay to decline if:
+- You're not needed for the discussion (politely decline with reason)
+- Meeting conflicts with focus time (suggest async alternative)
+- You can contribute asynchronously (suggest async communication)
+- Suggest alternative time if urgent (be helpful)
+
+## Meeting Tools
+
+- **Calendar**: Outlook (Microsoft 365)
+- **Video Calls**: Google Meet (primary), Zoom (backup)
+- **Documentation**: Confluence (meeting notes)
+- **Action Items**: Jira (link to tickets)
+
+## Meeting Follow-ups
+
+- Send meeting summary within 1 hour
+- Include: Decisions made, action items, owners, deadlines
+- Share in relevant Slack channel or email
+- Update Jira tickets if decisions affect work items
+
+## Contacts
+
+- Calendar/Meeting Issues: Contact IT helpdesk (helpdesk@agentforce.com)
+- Facilities (Room Issues): facilities@agentforce.com
+- For meeting best practices questions: Check #agentforce-meetings Slack channel

@@ -1,0 +1,102 @@
+AgentForce Infotech On-Call Rotation and Procedures
+
+## On-Call Schedule
+
+- Rotation changes every Monday at 9:00 AM IST
+- Schedule posted in #agentforce-oncall Slack channel
+- Each engineer serves one week per quarter (approximately)
+- Backup on-call assigned for coverage (secondary engineer)
+- Schedule managed by Vikram Singh (Tech Lead)
+
+Current rotation order: Backend team → Frontend team → DevOps team → QA team
+
+## Responsibilities
+
+1. Monitor alerts and error dashboards (Grafana, PagerDuty, Sentry)
+2. Respond to critical incidents within SLA (see severity levels below)
+3. Escalate to senior engineers or Tech Lead if needed
+4. Document incidents in Jira (project: INCIDENT)
+5. Hand off to next on-call engineer (Monday morning standup)
+
+## Alert Severity Levels
+
+**P0 - Critical (Immediate Response - 15 minutes)**
+- Production application down (app.agentforce.com unavailable)
+- Data breach or security incident
+- Payment processing system failure
+- Database corruption or data loss
+- Response Time: Within 15 minutes
+- Escalation: Immediately to Tech Lead (Vikram Singh) and CTO
+
+**P1 - High (Urgent - 1 hour)**
+- Major feature broken (affecting >50% users)
+- Performance degradation (response time >5 seconds)
+- API rate limiting issues
+- Critical third-party service outage
+- Response Time: Within 1 hour
+- Escalation: After 30 minutes if unresolved
+
+**P2 - Medium (Normal - 4 hours)**
+- Minor feature issues (affecting <50% users)
+- Non-critical errors (logging, monitoring)
+- Staging environment issues
+- Response Time: Within 4 hours (business hours)
+
+**P3 - Low (Low Priority - Next Business Day)**
+- Cosmetic UI issues
+- Enhancement requests
+- Documentation updates
+- Response Time: Next business day
+
+## Tools
+
+- **PagerDuty**: Alert routing and on-call management
+  - URL: https://agentforce.pagerduty.com
+  - Mobile app required (install on phone)
+  
+- **Grafana**: Monitoring dashboards
+  - URL: https://grafana.agentforce.internal
+  - Key dashboards: Production Health, API Latency, Error Rates
+  
+- **Sentry**: Error tracking and alerting
+  - URL: https://sentry.agentforce.internal
+  - Alerts for new errors and error spikes
+  
+- **Status Page**: Outage communication
+  - URL: https://status.agentforce.com
+  - Update during P0/P1 incidents
+
+## Incident Response Process
+
+1. **Acknowledge** alert in PagerDuty (within 5 minutes)
+2. **Assess** severity and impact (check Grafana, Sentry)
+3. **Create** incident ticket in Jira (project: INCIDENT)
+4. **Investigate** and attempt to fix
+5. **Communicate** status in #agentforce-incidents Slack channel
+6. **Post-mortem** required for P0/P1 incidents (within 48 hours)
+
+## Escalation Path
+
+If unable to resolve:
+- **P0**: Escalate immediately to Tech Lead (Vikram Singh - vikram.singh@agentforce.com, mobile in directory)
+- **P1**: Escalate after 30 minutes of investigation to Tech Lead
+- **P2/P3**: Document in Jira, handle during business hours
+
+Contact channels:
+- #agentforce-incident-response Slack channel
+- On-call phone tree (in 1Password: "On-Call Escalation")
+
+## On-Call Compensation
+
+- Additional 2 PTO days per on-call week
+- Overtime pay for P0 incidents resolved outside business hours
+- Recognition in quarterly all-hands meeting
+
+## Handoff Process
+
+Every Monday 9:00 AM IST:
+- Current on-call presents incidents from previous week
+- Next on-call receives PagerDuty access and context
+- Any ongoing incidents documented in Jira
+
+For questions, contact Vikram Singh (Tech Lead) or check #agentforce-oncall channel.
