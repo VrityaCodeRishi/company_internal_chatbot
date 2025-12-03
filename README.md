@@ -1,4 +1,4 @@
-# AgentForce Infotech Internal Chatbot
+# Company Internal Chatbot
 
 A RAG (Retrieval Augmented Generation) based chatbot for internal company documentation using LangChain, ChromaDB, Ollama, FastAPI, and Gradio.
 
