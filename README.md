@@ -13,6 +13,8 @@ This chatbot allows employees to query internal company documentation using natu
 
 We are using Ollama which pulls the models local to the system as we can't expose the internal documents to internet by using standard hosted models APIs like OpenAI,Claude,Gemini etc. So we don't require internet for this project.
 
+We are assuming our company name is AgentForce Infotech and we generated some custom documents regarding our company in company-docs folder
+
 ## Architecture
 
 ### RAG Pipeline Flow
